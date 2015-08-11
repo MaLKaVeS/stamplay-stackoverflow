@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{2f2a1681-c1a4-475a-859e-e8cc56c875a7}</ProjectGuid>
+        <ProjectHome />
+        <ProjectView>ShowAllFiles</ProjectView>
+        <StartupFile>Gruntfile.js</StartupFile>
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="404.html" />
+        <Content Include="index_dev.html" />
+        <Content Include="index.html" />
+        <Content Include="bower.json" />
+        <Content Include="package.json" />
+        <Content Include="CHANGELOG.md" />
+        <Content Include="README.md" />
+        <Compile Include="Gruntfile.js" />
+        <Content Include="css\answer.css" />
+        <Content Include="css\footer.css" />
+        <Content Include="css\index.css" />
+        <Content Include="css\jumbotron-narrow.css" />
+        <Content Include="css\question.css" />
+        <Content Include="css\sidebar.css" />
+        <Content Include="css\tags.css" />
+        <Content Include="css\users.css" />
+        <Content Include="css\widget.css" />
+        <Content Include="css\glyphicons-halflings-regular.svg" />
+        <Content Include="dist\stylesheets.min.css" />
+        <Compile Include="dist\controllers.min.js" />
+        <Compile Include="dist\libs.min.js" />
+        <Compile Include="dist\services.min.js" />
+        <Compile Include="grunt\clean.js" />
+        <Compile Include="grunt\concat.js" />
+        <Compile Include="grunt\cssmin.js" />
+        <Compile Include="grunt\uglify.js" />
+        <Compile Include="grunt-task\build.js" />
+        <Content Include="img\sprites.png" />
+        <Content Include="img\stamplay-logo-v2.png" />
+        <Content Include="img\favicon.ico" />
+        <Content Include="pages\ask.html" />
+        <Content Include="pages\empty.html" />
+        <Content Include="pages\home.html" />
+        <Content Include="pages\question.html" />
+        <Content Include="pages\tags.html" />
+        <Content Include="pages\users.html" />
+        <Compile Include="js\controllers\answerCtrl.js" />
+        <Compile Include="js\controllers\answerEditCtrl.js" />
+        <Compile Include="js\controllers\askCtrl.js" />
+        <Compile Include="js\controllers\homeCtrl.js" />
+        <Compile Include="js\controllers\menuCtrl.js" />
+        <Compile Include="js\controllers\tagsCtrl.js" />
+        <Compile Include="js\controllers\usersCtrl.js" />
+        <Compile Include="js\lib\ng-infinite-scroll.js" />
+        <Compile Include="js\lib\ui-bootstrap-0.11.0.min.js" />
+        <Compile Include="js\modules\app.js" />
+        <Compile Include="js\services\angular-stamplay.js" />
+        <Compile Include="js\services\answersService.js" />
+        <Compile Include="js\services\main.js" />
+        <Compile Include="js\services\questionsService.js" />
+        <Compile Include="js\services\tagsService.js" />
+        <Compile Include="js\services\userService.js" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="css" />
+        <Folder Include="dist" />
+        <Folder Include="grunt" />
+        <Folder Include="grunt-task" />
+        <Folder Include="img" />
+        <Folder Include="js" />
+        <Folder Include="js\controllers" />
+        <Folder Include="js\lib" />
+        <Folder Include="js\modules" />
+        <Folder Include="js\services" />
+        <Folder Include="pages" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+    <ProjectExtensions>
+        <VisualStudio>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+            <WebProjectProperties>
+              <UseIIS>False</UseIIS>
+              <AutoAssignPort>True</AutoAssignPort>
+              <DevelopmentServerPort>0</DevelopmentServerPort>
+              <DevelopmentServerVPath>/</DevelopmentServerVPath>
+              <IISUrl>http://localhost:48022/</IISUrl>
+              <NTLMAuthentication>False</NTLMAuthentication>
+              <UseCustomServer>True</UseCustomServer>
+              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+            </WebProjectProperties>
+          </FlavorProperties>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+            <WebProjectProperties>
+              <StartPageUrl>
+              </StartPageUrl>
+              <StartAction>CurrentPage</StartAction>
+              <AspNetDebugging>True</AspNetDebugging>
+              <SilverlightDebugging>False</SilverlightDebugging>
+              <NativeDebugging>False</NativeDebugging>
+              <SQLDebugging>False</SQLDebugging>
+              <ExternalProgram>
+              </ExternalProgram>
+              <StartExternalURL>
+              </StartExternalURL>
+              <StartCmdLineArguments>
+              </StartCmdLineArguments>
+              <StartWorkingDirectory>
+              </StartWorkingDirectory>
+              <EnableENC>False</EnableENC>
+              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+            </WebProjectProperties>
+          </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+</Project>
