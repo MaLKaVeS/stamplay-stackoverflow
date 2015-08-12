@@ -31,11 +31,10 @@ module.exports = function (grunt) {
 		'uglify:controllers',
 		'uglify:services',
 		'clean:js'
-	]);
+    ]);
 
 	//Builds everything
 	grunt.registerTask('build', 'Create Stamplay production ready project in /assets', function () {
 		grunt.task.run(['buildCss', 'buildlib', 'buildDist']);
-	});
-
+    });
 }
