@@ -20,6 +20,8 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="img\new_favicon.ico" />
+    <Content Include="img\stackoverflow.ico" />
     <Content Include="index_dev.html" />
     <Content Include="index.html" />
     <Content Include="bower.json" />
