@@ -3,6 +3,7 @@
 var 
  gulp = require('gulp'),
     watch = require('gulp-watch'), /* Para tareas que mantienen la ejecución */
+    exec = require('gulp-exec'),
     assemblyInfo = require('gulp-dotnet-assembly-info'), // Para sobreescribir los datos del AssemblyInfo
     msbuild = require('gulp-msbuild'), // Para compilar 
     mocha = require('gulp-mocha'), // Framework de testing
@@ -80,7 +81,8 @@ gulp.task('ci', []);
 gulp.task('deploy', [], function (callback) {
     console.log('Desplegando app!');
     
-    
+    gulp.src('.')
+        .pipe(exec('stamplay deploy'));
 
     callback();
 });

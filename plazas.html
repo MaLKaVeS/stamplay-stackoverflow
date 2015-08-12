@@ -1,11 +1,56 @@
 ﻿<!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="utf-8" />
-        <title>Listado de Plazas</title>
-    </head>
-    <body>
-        
-    </body>
+<head>
+    <meta charset="utf-8" />
+    <title>Mapa de Plazas</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 70%;
+            width: 70%;
+            margin: 2% 20% 0 1%;
+        }
+    </style>
+    <link rel="dist/stylesheets.min.css" type="text/css" />
+</head>
+<body>
+    <h1>Mapa de plazas</h1>
+    <div id="map"></div>
+    <div>
+        <form>
+            <label>Colegio</label><input type="text" name="nombre" max="50" />
+            <button>Grabar</button>
+        </form>
+    </div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_y1L6lRaw-1aSCZYdIkMt2M44moBxA70&callback=initMap">
+    </script>
+    <script type="text/javascript">
+            var fho = fho ||{};
+
+            function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+  center: {lat: 43.116196, lng: -3.913877},
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+      mapTypeIds: [
+        google.maps.MapTypeId.ROADMAP,
+        google.maps.MapTypeId.TERRAIN
+      ]
+    },
+    zoomControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL
+    }
+  });
+            }
+    </script>
+</body>
 </html>
