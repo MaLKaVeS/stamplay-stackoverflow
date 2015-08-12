@@ -4,6 +4,7 @@ var
  gulp = require('gulp'),
     watch = require('gulp-watch'), /* Para tareas que mantienen la ejecución */
     exec = require('gulp-exec'),
+    exec_std = require('child_process').exec;
     assemblyInfo = require('gulp-dotnet-assembly-info'), // Para sobreescribir los datos del AssemblyInfo
     msbuild = require('gulp-msbuild'), // Para compilar 
     mocha = require('gulp-mocha'), // Framework de testing
@@ -24,6 +25,7 @@ gulp.task('default', function () {
     console.log('* ci -> Ejecuta el proceso de integración continua');
     //console.log('* publicadev -> Publica a desarrollo');
     //console.log('* publicareal -> Publica a producción');
+    console.log('* run -> Ejecuta la app en local');
     console.log('* deploy -> Despliega la app');
 });
 
@@ -78,11 +80,38 @@ gulp.task('publicareal', ['webconfigreal', 'runtest'], function (callback) { });
 // Para cuando hay integración continua :')
 gulp.task('ci', []);
 
+gulp.task('run', [], function (callback) {
+    console.log('Ejecutando app!');
+    
+    
+    exec_std('stamplay start', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+
+    //gulp.src('.')
+    //    .pipe(exec('stamplay start'));
+});
+
 gulp.task('deploy', [], function (callback) {
     console.log('Desplegando app!');
+       
+    var options = {
+        continueOnError: false, // default = false, true means don't emit error event 
+        pipeStdout: false, // default = false, true means stdout is written to file.contents 
+        customTemplatingThing: "test" // content passed to gutil.template() 
+    };
+    var reportOptions = {
+        err: true, // default = true, false means don't write err 
+        stderr: true, // default = true, false means don't write stderr 
+        stdout: true // default = true, false means don't write stdout 
+    }
     
-    gulp.src('.')
-        .pipe(exec('stamplay deploy'));
+    gulp.src('./**/**')
+        .pipe(exec('stamplay deploy', options))
+    //.pipe(exec('git checkout <%= file.path %> <%= options.customTemplatingThing %>', options))
+    .pipe(exec.reporter(reportOptions));
 
     callback();
 });
